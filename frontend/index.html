@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles/index.css" />
+    <script src="scripts/index.js"></script>
+  </head>
+  <body>
+    <div class="indexMainContainer">
+      <div class="dataContainer">
+        <div class="telemetryContainer">telemetry data goes here</div>
+        <div class="stateContainer">rover state info goes here</div>
+        <div class="configContainer">rover configuration info goes here</div>
+      </div>
+      <div class="commandContainer">
+        <div class="functionContainer">
+          <div class="speedControlContainer">speed controls go here</div>
+          <div class="ledControlContainer">led controls go here</div>
+          <div class="videoControlContainer">video controls go here</div>
+        </div>
+        <div class="movementContainer">
+          <table width="220" height="220" border="1px" cellpadding="5px" align="center" id="roverCommandTable">
+            <tbody class="movementControlTable">
+              <tr id="row1">
+                <td></td>
+                <td><input type="button" value="Forward" class="moveButton" id="forwardButton" /></td>
+                <td></td>
+              </tr>
+
+              <tr id="row2">
+                <td><input type="button" value="Left" class="moveButton" id="leftButton" /></td>
+                <td></td>
+                <td><input type="button" value="Right" class="moveButton" id="rightButton" /></td>
+              </tr>
+
+              <tr id="row3">
+                <td></td>
+                <td><input type="button" value="Reverse" class="moveButton" id="freverseButton" /></td>
+                <td></td>
+              </tr>
+
+              <tr id="row4">
+                <td><input type="button" value="Stop" class="moveButton" id="stopButton" /></td>
+                <td></td>
+                <td><input type="button" value="Cruise" class="moveButton" id="cruiseButton" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

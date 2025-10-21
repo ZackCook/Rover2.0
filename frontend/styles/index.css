@@ -1,0 +1,24 @@
+.indexMainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: row;
+}
+.commandContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.functionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /*adds space in between internal divs*/
+}
