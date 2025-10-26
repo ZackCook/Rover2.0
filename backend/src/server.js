@@ -100,7 +100,6 @@ server.listen(PORT, HOST, () => {
 const wss = new WebSocketServer({ server });
 
 const clients = new Map(); // Stores Client class instances by their unique ID
-clientUILinks = new Map();
 /**
  * Creates a standard V2 message object.
  * @param {string} type The msgType.
