@@ -22,3 +22,13 @@
   flex-direction: column;
   justify-content: space-around; /*adds space in between internal divs*/
 }
+
+.telemetryContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.telemetryPanel {
+  border: 1px solid black;
+  width: 50px;
+}

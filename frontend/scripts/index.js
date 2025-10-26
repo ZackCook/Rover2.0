@@ -1,10 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const ws = new WebSocket(`ws://${window.location.host}`);
 
-  let assignedId = null;
+  let assignedID = null;
 
   //DOM components
   const forwardButton = document.getElementById("forwardButton");
+  const stopButton = document.getElementById("stopButton");
+  const leftButton = document.getElementById("leftButton");
+  const rightButton = document.getElementById("rightButton");
+  const reverseButton = document.getElementById("reverseButton");
+  const cruiseButton = document.getElementById("cruiseButton");
 
   // ******************************** /
   // ** DOM COMPONENT EVENT HANDLERS ** /
@@ -36,6 +41,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   ws.addEventListener("message", (event) => {
     logTimestamp(`Message from server: ${event.data}`);
+
+    let incomingMessage;
+    try {
+      incomingMessage = JSON.parse(event.data);
+    } catch (e) {
+      logTimestamp("incoming message JSON could not be parsed");
+    }
+
+    if (incomingMessage.msgType === "assignedID") {
+      assignedID = incomingMessage.msgPayload.assignedID;
+      logTimestamp(`ID assigned: ${assignedID}`);
+    }
   });
 
   // *********************** /
@@ -53,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return {
       msgID: crypto.randomUUID(),
       msgType: type,
-      msgSource: assignedId,
+      msgSource: assignedID,
       msgTarget: target,
       msgTimestamp: new Date().toISOString(),
       msgPayload: payload,
